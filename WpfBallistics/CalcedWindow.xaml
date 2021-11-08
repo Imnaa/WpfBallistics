@@ -1,0 +1,55 @@
+﻿<Window x:Class="WpfBallistics.CalcedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:WpfBallistics"
+        mc:Ignorable="d"
+        Title="CalcedWindow" Height="860" Width="1500">
+
+    <Window.Resources>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid x:Name="MainRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="19.04"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1210"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <lvc:CartesianChart Grid.Row="1" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="2" Series="{Binding SeriesCollection}" LegendLocation="Right" >
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Высота полета" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Дальность полета" Labels="{Binding Labels}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
+
+        <DataGrid x:Name="dgMain" AutoGenerateColumns="False" Grid.Row="2" Grid.Column="1" Grid.RowSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding IndexExp}" />
+                <DataGridTextColumn Header="Угол" Binding="{Binding Angle}" />
+                <DataGridTextColumn Header="Время полета" Binding="{Binding FlyTime}" />
+                <DataGridTextColumn Header="Высота макс. полета" Binding="{Binding FlyHeightMax}" />
+                <DataGridTextColumn Header="Дальность полета" Binding="{Binding FlyDistance}" />
+                <DataGridTextColumn Header="Скорость макс. на акт. участке" Binding="{Binding VActMax}" />
+                <DataGridTextColumn Header="Скорость конечная" Binding="{Binding VEndMax}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

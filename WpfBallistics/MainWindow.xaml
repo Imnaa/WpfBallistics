@@ -1,0 +1,142 @@
+﻿<Window x:Class="WpfBallistics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBallistics"
+        mc:Ignorable="d"
+        Title="Расчет траектории полета реактивного снаряда" Height="440" Width="740" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,0" x:Name="MainRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="18"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <!--#region 1 block-->
+        <TextBlock Text="Массо-габаритные характеристики" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <TextBlock Text="Масса топлива" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbFuelMass" Grid.Row="2" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Масса обечайки ракетной части" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbMassPocketPath" Grid.Row="3" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Масса головной части" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbMassHeadPath" Grid.Row="4" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Калибр" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbCalibr" Grid.Row="5" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <!--#endregion 1 block-->
+        <!--#region 2 block-->
+        <TextBlock Text="Характеристики РД" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <TextBlock Text="Среднее значение F тяги" Grid.Row="8" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbAvgValFt" Grid.Row="8" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Время горения топлива" Grid.Row="9" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbTimeFuelFire" Grid.Row="9" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <!--#endregion 2 block-->
+        <!--#region 3 block-->
+        <TextBlock Text="Характеристики ПУ" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <TextBlock Text="Длина направляющей" Grid.Row="12" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbDlinaNapravl" Grid.Row="12" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Усилие стопорения" Grid.Row="13" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbUsilieStoporen" Grid.Row="13" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <!--#endregion 3 block-->
+        <!--#region 4 block-->
+        <TextBlock Text="АД характеристики" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <TextBlock Text="Коэффициент формы" Grid.Row="16" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbKoeffForm" Grid.Row="16" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <!--#endregion 4 block-->
+        <!--#region 5 block-->
+        <TextBlock Text="Параметры интегрирования" Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <TextBlock Text="Шаг интегрирования" Grid.Row="19" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbStepIntegr" Grid.Row="19" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="19" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Время расчета" Grid.Row="20" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbTimeCalc" Grid.Row="20" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="20" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Количество экспериментов" Grid.Row="21" Grid.Column="1" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbCountExp" Grid.Row="21" Grid.Column="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="18"/>
+        <Rectangle Grid.Row="21" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <!--#endregion 5 block-->
+        <!--#region 6 block-->
+        <TextBlock Text="Параметры точности" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <TextBlock Text="Вычисление на акт. участке" Grid.Row="2" Grid.Column="4" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbDeltaAct" Grid.Row="2" Grid.Column="5" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Вычисление на не акт. участке" Grid.Row="3" Grid.Column="4" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbDeltaNotAct" Grid.Row="3" Grid.Column="5" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Вывод значений акт. участка" Grid.Row="4" Grid.Column="4" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbDeltaOutAct" Grid.Row="4" Grid.Column="5" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <TextBlock Text="Вывод значений не акт. участка" Grid.Row="5" Grid.Column="4" VerticalAlignment="Bottom" Height="16"/>
+        <TextBox x:Name="tbDeltaOutNotAct" Grid.Row="5" Grid.Column="5" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"/>
+        <Rectangle Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="1" Stroke="Black" Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+
+        <!--#endregion 6 block-->
+        <!--#region 7 block-->
+        <TextBlock Text="Шаблоны" Grid.Row="6" Grid.Column="4" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <ListView x:Name="lv_Templates" Grid.Row="8" Grid.Column="4" Grid.RowSpan="14" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="250">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding}" FontWeight="Bold"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--#endregion 7 block-->
+        <!--#region 8 block-->
+        <Button Grid.Row="8" Grid.Column="5" Grid.RowSpan="2" Content="Применить" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="50" Click="Btn_Apply_Click"/>
+        <Button x:Name="btnCalc" Grid.Row="10" Grid.Column="5" Grid.RowSpan="2" Content="Вычислить" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="50" Click="Btn_Calc_Click"/>
+        <Button Grid.Row="12" Grid.Column="5" Grid.RowSpan="2" Content="Очистить" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="50" Click="Btn_Clear_Click"/>
+        <Button Grid.Row="14" Grid.Column="5" Grid.RowSpan="2" Content="Результаты" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="50" Click="Btn_Results_Click"/>
+        <Button Grid.Row="16" Grid.Column="5" Grid.RowSpan="2" Content="Шаблоны" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="50" Click="Btn_Templates_Click"/>
+        <Button Grid.Row="18" Grid.Column="5" Grid.RowSpan="2" Content="Настройки" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="50" Click="Btn_Settings_Click"/>
+        <Button Grid.Row="20" Grid.Column="5" Grid.RowSpan="2" Content="Выход" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="50" Click="Btn_Close_Click"/>
+        <!--#endregion 8 block-->
+
+        <!--#region 9 block-->
+        <TextBlock Text="Начальные углы" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Height="19"/>
+        <!--#endregion 9 block-->
+    </Grid>
+</Window>

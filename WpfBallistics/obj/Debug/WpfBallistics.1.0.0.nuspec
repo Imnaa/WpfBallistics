@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>WpfBallistics</id>
+    <version>1.0.0</version>
+    <authors>WpfBallistics</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="EPPlus" version="5.7.4" exclude="Build,Analyzers" />
+        <dependency id="LiveCharts.Core" version="0.9.8" exclude="Build,Analyzers" />
+        <dependency id="LiveCharts.Wpf.Core" version="0.9.8" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\userOP\source\repos\WpfBallistics\WpfBallistics\bin\Debug\netcoreapp3.1\WpfBallistics.runtimeconfig.json" target="lib\netcoreapp3.1\WpfBallistics.runtimeconfig.json" />
+    <file src="C:\Users\userOP\source\repos\WpfBallistics\WpfBallistics\bin\Debug\netcoreapp3.1\WpfBallistics.dll" target="lib\netcoreapp3.1\WpfBallistics.dll" />
+  </files>
+</package>
