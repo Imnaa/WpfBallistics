@@ -1,0 +1,9 @@
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\bin\Debug\netcoreapp3.1\BallisticLibCore.deps.json
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\bin\Debug\netcoreapp3.1\BallisticLibCore.dll
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\bin\Debug\netcoreapp3.1\BallisticLibCore.pdb
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\obj\Debug\netcoreapp3.1\BallisticLibCore.csproj.AssemblyReference.cache
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\obj\Debug\netcoreapp3.1\BallisticLibCore.AssemblyInfoInputs.cache
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\obj\Debug\netcoreapp3.1\BallisticLibCore.AssemblyInfo.cs
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\obj\Debug\netcoreapp3.1\BallisticLibCore.csproj.CoreCompileInputs.cache
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\obj\Debug\netcoreapp3.1\BallisticLibCore.dll
+C:\Users\userOP\source\repos\BallisticLib\BallisticLibCore\obj\Debug\netcoreapp3.1\BallisticLibCore.pdb

@@ -1,0 +1,6 @@
+C:\Users\userOP\source\repos\BallisticLib\BallisticLib\bin\Debug\BallisticLib.dll
+C:\Users\userOP\source\repos\BallisticLib\BallisticLib\bin\Debug\BallisticLib.pdb
+C:\Users\userOP\source\repos\BallisticLib\BallisticLib\obj\Debug\BallisticLib.csproj.CoreCompileInputs.cache
+C:\Users\userOP\source\repos\BallisticLib\BallisticLib\obj\Debug\BallisticLib.dll
+C:\Users\userOP\source\repos\BallisticLib\BallisticLib\obj\Debug\BallisticLib.pdb
+C:\Users\userOP\source\repos\BallisticLib\BallisticLib\obj\Debug\BallisticLib.csproj.AssemblyReference.cache
